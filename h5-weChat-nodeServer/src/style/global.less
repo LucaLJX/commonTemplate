@@ -1,0 +1,141 @@
+.division-row {
+  height: 12px;
+  background: @bgColor;
+  .border-top;
+  .border-bottom;
+}
+.btn {
+  display: inline-block;
+  padding: 0;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #333;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+  height: 39px;
+  line-height: 39px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btn-long {
+  display: block;
+  width: 100%;
+  height: 49px;
+  line-height: 49px;
+  border-radius: 0;
+  font-size: 16px;
+}
+.btn-primary {
+  color: white;
+  background-color: @base;
+}
+.btn-primary-reverse {
+  border: 1px solid currentColor;
+  color: @base;
+  background-color: white;
+}
+.btn-orange {
+  color: white;
+  background-color: #ff8929;
+}
+.btn-red {
+  color: white;
+  background-color: @base;
+}
+.btn-gray {
+  color: #999;
+  background-color: #ddd;
+}
+.btn-gray-reverse {
+  border: 1px solid currentColor;
+  color: #999;
+  background-color: white;
+}
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  background: no-repeat center;
+  background-size: contain;
+}
+.gray-body {
+  background: @bgColor;
+}
+// 表单
+.input-control {
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+  input {
+    display: none;
+  }
+  .radio-core {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+  }
+  input:checked + .radio-core {
+    position: relative;
+    border-color: @base;
+    &:before {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      display: block;
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: @base;
+    }
+  }
+}
+// 无限加载显示
+.infinite-loading {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+// 无信息提示
+.none-tip {
+  margin: 70px 0;
+  text-align: center;
+  font-size: 16px;
+}
+// 箭头
+.arrow-up {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  transform: rotateZ(-45deg);
+  &:before,
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    background-color: #e5e5e5;
+    transform: translateY(0.5);
+  }
+  &:before {
+    width: 10px;
+    height: 1px;
+    top: 0;
+    left: 0;
+  }
+  &:after {
+    width: 1px;
+    height: 10px;
+    top: 0;
+    right: 0;
+  }
+}

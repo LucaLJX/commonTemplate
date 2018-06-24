@@ -1,0 +1,69 @@
+@base: #ff3c38;
+@orange: #ff8929;
+@yellow: #fecb00;
+@blue: #1ec3e1;
+@green: #5ac74e;
+@bgColor: #f0f0f0;
+@borderColor: #e5e5e5;
+
+.border-top(@color: @borderColor) {
+  position: relative;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    content: '';
+    border-top: 1px solid @color;
+    transform: scaleY(.5);
+  }
+}
+.border-bottom(@color: @borderColor) {
+  position: relative;
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    content: '';
+    border-bottom: 1px solid @color;
+    transform: scaleY(.5);
+  }
+}
+.border-left(@color: @borderColor) {
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: block;
+    content: '';
+    border-left: 1px solid @color;
+    transform: scaleX(.5);
+  }
+}
+.border-right(@color: @borderColor) {
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    content: '';
+    border-right: 1px solid @color;
+    transform: scaleX(.5);
+  }
+}
+.textrow(@row: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @row;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical; // 参考 https://github.com/postcss/autoprefixer/issues/776
+  /* autoprefixer: on */
+}
