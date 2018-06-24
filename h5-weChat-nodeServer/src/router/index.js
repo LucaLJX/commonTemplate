@@ -5,6 +5,12 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    // islider.js - 示例代码
+    {
+      path: '/isliderDemo',
+      name: 'isliderDemo',
+      component: resolve => require(['@/pages/isliderDemo'], resolve)
+    },
     {
       path: '/newHome',
       name: 'newHome',

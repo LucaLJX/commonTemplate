@@ -23,6 +23,7 @@ module.exports = {
     'space-before-function-paren': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'semi': 0
+    'semi': 0,
+    'new-cap': 0
   }
 }
