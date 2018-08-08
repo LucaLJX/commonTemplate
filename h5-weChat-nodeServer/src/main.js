@@ -16,6 +16,8 @@ Vue.config.productionTip = false
 router.beforeEach(function(to, from, next) {
   Indicator.open()
 
+  console.log('to.meta');
+  console.log(to);
   // 修改页面 title
   document.title = to.meta.title || 'test title'
 

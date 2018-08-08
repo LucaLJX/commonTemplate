@@ -13,11 +13,17 @@
     <div id="item-3">
       <p>this is the item 1</p>
     </div>
+
+
+    <div class="share-test" style="width: 100%;height: 200px;margin-top: 20px;">
+      <div @click="shareTest" style="width: 100px; height: 100px; background: red;">分享</div>
+    </div>
 	</div>
 </template>
 
 <script>
 import iSlider from 'islider.js'
+import { MessageBox } from 'mint-ui'
 
 export default {
   data () {
@@ -55,6 +61,29 @@ export default {
         isOverspread: 1,
         animateTime: 800
       });
+    },
+    shareTest () {
+      alert('分享');
+      // let _this = this;
+      function shareInfo () {
+        alert('进入shareinfo');
+        let shareLink = 'http://www.baidu.com';
+        var shareObj = {
+          title: 'shareTitle',
+          desc: '这是描述desc，测试分享',
+          link: shareLink,
+          imgUrl: location.origin + '/static/logo-small.png',
+          success: function () { MessageBox.alert('分享成功') }
+        }
+        alert('shareObj');
+        window.wx.onMenuShareTimeline(shareObj)
+        alert('timeline');
+        window.wx.onMenuShareAppMessage(shareObj)
+      }
+      window.wx.ready(() => {
+        alert('fenxiang');
+        shareInfo()
+      })
     }
   }
 }

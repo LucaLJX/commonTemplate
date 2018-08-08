@@ -36,10 +36,14 @@ Vue.prototype.$axios.post('/jsApiTicket', {
 }, { baseURL: '/user' }).then(config => {
   // config.debug = true
   config.jsApiList = ['onMenuShareTimeline', 'onMenuShareAppMessage']
+  config.debug
   window.wx.config(config)
+  console.log('初始化成功 _ 1');
+  console.log(window.wx.config);
 }).catch(e => {})
 
 window.wx.ready(function () {
+  console.log('信息初始化成功');
   var currentLocation = location.href
   var homeLocation = location.origin
   var shareLink = homeLocation
